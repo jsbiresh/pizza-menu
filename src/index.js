@@ -94,7 +94,7 @@ function Menu() {
 }
 
 function Pizza(props) {
-  console.log(props.pizzaObj)
+  //   console.log(props.pizzaObj)
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
@@ -112,11 +112,17 @@ function Footer() {
   const openHour = 12
   const closeHour = 22
   const isOpen = hour >= openHour && hour <= closeHour ? 'Open' : 'Close'
-  //   console.log(isOpen)
+  console.log(isOpen)
+  //   isOpen = false
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}. We're currently open.
+      {/* {new Date().toLocaleTimeString()}. We're currently open. */}
+      {/* {isOpen && <p>Open</p>} */}
+      {/* {isOpen ? <p>Open</p> : <p>Close</p>} */}
+      {isOpen && (
+        <p>We're open until {closeHour}:00. Come visit us or order online.</p>
+      )}
     </footer>
   )
   //   return React.createElement('footer', null, "We're currently open!")
